@@ -51,7 +51,7 @@ jobs:
   # descricao do job
   e2e-tests:
     # maquina que o job vai executar
-    runs-on: ubuntu-latest
+    runs-on: mcr.microsoft.com/playwright:v1.48.1-jammy
 
     # passo a passo das acoes do job
     steps:
@@ -66,9 +66,6 @@ jobs:
 
       - name: Instalando dependências
         run: yarn
-
-      - name: Instalando Playwright
-        run: yarn playwright install
 
       - name: Subir aplicacao local
         run: yarn start &
